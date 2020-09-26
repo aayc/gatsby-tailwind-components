@@ -7,6 +7,8 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
 
+import ErrorBanner from "../components/error-banner"
+import Checkout from "../components/checkout"
 import Video from "../components/video"
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -18,7 +20,7 @@ config.autoAddCss = false
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h5>FontAwesome Icons</h5>
+    <h4>FontAwesome Icons</h4>
     <div>
       <div className="rounded-full" style={{ marginBottom: `1rem` }}>
         <a href="https://github.com/aayc" rel="noopener noreferrer" target="_blank">
@@ -32,13 +34,19 @@ const IndexPage = () => (
           </a>
       </div>
     </div>
-    <h5>Video component</h5>
+    <h4>Video component</h4>
     <Video
       width="500"
       height="281"
       videoSrcURL="https://www.youtube.com/embed/gmVD6UB_Y-E"
       videoTitle="Video goes here"
     />
+    <h4>Stripe Checkout</h4>
+    <Checkout />
+    <br />
+    <br />
+    <h4>Error banner</h4>
+    <ErrorBanner title="title" msg="messge" visible={true}/>
   </Layout>
 )
 
